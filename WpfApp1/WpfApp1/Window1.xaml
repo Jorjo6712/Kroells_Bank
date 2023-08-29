@@ -28,7 +28,8 @@
                 Height="100" 
                 Fill="White" 
                 Grid.Column="1" 
-                Margin="0 10 0 0"/>
+                Margin="0 10 0 0"
+            />
             <Label 
                 Grid.Column="1" 
                 HorizontalAlignment="Center" 
@@ -89,6 +90,26 @@
                     (Cancel)
                 </TextBlock>
             </Button>
+
+            <Rectangle 
+                Width="250" 
+                Height="40" 
+                Fill="White" 
+                Grid.Column="1" 
+                Grid.Row="1"
+                Margin="0 0 0 0"
+            />
+
+            <Label
+                Width="250" 
+                Height="40" 
+                Grid.Column="1" 
+                Grid.Row="1"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                >
+                Transaction amount
+            </Label>
 
             <Grid Grid.Column="1" Grid.Row="2">
                 <Grid.RowDefinitions>
