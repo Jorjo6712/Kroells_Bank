@@ -57,7 +57,8 @@
                 Margin="-200,20,0,20" 
                 Width="90" 
                 Height="50"
-                FontSize="15">
+                FontSize="15"
+                Visibility="Hidden">>
                 Deposit (1)
             </Button>
 
@@ -68,7 +69,8 @@
                 Margin="0,20,0,20" 
                 Width="90" 
                 Height="50"
-                FontSize="15">
+                FontSize="15"
+                Visibility="Hidden">>
                 Withdraw (2)
             </Button>
 
@@ -79,7 +81,8 @@
                 Margin="200,20,0,20" 
                 Width="90" 
                 Height="50"
-                FontSize="15">
+                FontSize="15"
+                Visibility="Hidden">
                 <TextBlock>
                     Log out
                     <LineBreak/>
