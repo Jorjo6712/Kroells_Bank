@@ -334,14 +334,42 @@ ALTER TABLE Client_job ADD FOREIGN KEY(Client_ID) REFERENCES Clients (Client_ID)
 ALTER TABLE CPR_Address ADD FOREIGN KEY(Address_ID) REFERENCES Addresses (Address_ID);
 ALTER TABLE CPR_Address ADD FOREIGN KEY(CPR_nr) REFERENCES CPRs (CPR_nr);
 
-CREATE PROCEDURE PinToDepositMoney
+CREATE PROCEDURE PinToClientInfo
 @Pin SMALLINT
-@DepositValue INT
 AS
 BEGIN
-	UPDATE Clients
-	SET Balance = @DepositValue + Balance
+	SELECT Balance, Clients.Client_name FROM Clients
 	JOIN Cards
 	ON Clients.Client_name = Cards.Client_name
 	WHERE Pin = @Pin;
 END
+	
+CREATE PROCEDURE PinToDepositMoney
+@Pin SMALLINT,
+@DepositValue INT
+AS
+UPDATE Clients
+SET Balance = @DepositValue + Balance
+WHERE Client_name IN
+(
+  SELECT Clients.Client_name
+  FROM Clients
+  INNER JOIN Cards
+  ON Clients.Client_name = Cards.Client_name
+  WHERE Pin = @Pin
+);
+
+CREATE PROCEDURE PinToWithdrawMoney
+@Pin SMALLINT,
+@DepositValue INT
+AS
+UPDATE Clients
+SET Balance = Balance - @DepositValue 
+WHERE Client_name IN
+(
+  SELECT Clients.Client_name
+  FROM Clients
+  INNER JOIN Cards
+  ON Clients.Client_name = Cards.Client_name
+  WHERE Pin = @Pin
+);
