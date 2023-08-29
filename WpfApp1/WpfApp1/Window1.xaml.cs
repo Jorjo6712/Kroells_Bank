@@ -22,8 +22,12 @@ namespace WpfApp1
         public Window1()
         {
             InitializeComponent();
+            GetValues();
         }
 
-
+        public void GetValues()
+        {
+            // Get balance and output the value
+        }
     }
 }

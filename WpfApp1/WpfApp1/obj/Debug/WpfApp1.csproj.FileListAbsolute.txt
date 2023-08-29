@@ -29,3 +29,12 @@ C:\Users\zbc23jkst\Desktop\Kroells_Bank\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj
 C:\Users\zbc23jkst\Desktop\Kroells_Bank\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.CoreCompileInputs.cache
 C:\Users\zbc23jkst\Desktop\Kroells_Bank\WpfApp1\WpfApp1\obj\Debug\WpfApp1.exe
 C:\Users\zbc23jkst\Desktop\Kroells_Bank\WpfApp1\WpfApp1\obj\Debug\WpfApp1.pdb
+C:\Users\zbcmhlun\Documents\GitHub\Kroells_Bank\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.AssemblyReference.cache
+C:\Users\zbcmhlun\Documents\GitHub\Kroells_Bank\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.SuggestedBindingRedirects.cache
+C:\Users\zbcmhlun\Documents\GitHub\Kroells_Bank\WpfApp1\WpfApp1\obj\Debug\MainWindow.g.cs
+C:\Users\zbcmhlun\Documents\GitHub\Kroells_Bank\WpfApp1\WpfApp1\obj\Debug\Window1.g.cs
+C:\Users\zbcmhlun\Documents\GitHub\Kroells_Bank\WpfApp1\WpfApp1\obj\Debug\App.g.cs
+C:\Users\zbcmhlun\Documents\GitHub\Kroells_Bank\WpfApp1\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.cache
+C:\Users\zbcmhlun\Documents\GitHub\Kroells_Bank\WpfApp1\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.lref
+C:\Users\zbcmhlun\Documents\GitHub\Kroells_Bank\WpfApp1\WpfApp1\obj\Debug\WpfApp1.exe
+C:\Users\zbcmhlun\Documents\GitHub\Kroells_Bank\WpfApp1\WpfApp1\obj\Debug\WpfApp1.pdb
