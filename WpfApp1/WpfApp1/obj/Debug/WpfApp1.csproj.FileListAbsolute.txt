@@ -13,3 +13,19 @@ C:\Users\Shaz0184\Desktop\Testing C#\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.Ge
 C:\Users\Shaz0184\Desktop\Testing C#\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.CoreCompileInputs.cache
 C:\Users\Shaz0184\Desktop\Testing C#\WpfApp1\WpfApp1\obj\Debug\WpfApp1.exe
 C:\Users\Shaz0184\Desktop\Testing C#\WpfApp1\WpfApp1\obj\Debug\WpfApp1.pdb
+C:\Users\zbc23jkst\Desktop\Kroells_Bank\WpfApp1\WpfApp1\bin\Debug\WpfApp1.exe.config
+C:\Users\zbc23jkst\Desktop\Kroells_Bank\WpfApp1\WpfApp1\bin\Debug\WpfApp1.exe
+C:\Users\zbc23jkst\Desktop\Kroells_Bank\WpfApp1\WpfApp1\bin\Debug\WpfApp1.pdb
+C:\Users\zbc23jkst\Desktop\Kroells_Bank\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.AssemblyReference.cache
+C:\Users\zbc23jkst\Desktop\Kroells_Bank\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.SuggestedBindingRedirects.cache
+C:\Users\zbc23jkst\Desktop\Kroells_Bank\WpfApp1\WpfApp1\obj\Debug\MainWindow.g.cs
+C:\Users\zbc23jkst\Desktop\Kroells_Bank\WpfApp1\WpfApp1\obj\Debug\App.g.cs
+C:\Users\zbc23jkst\Desktop\Kroells_Bank\WpfApp1\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.cache
+C:\Users\zbc23jkst\Desktop\Kroells_Bank\WpfApp1\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.lref
+C:\Users\zbc23jkst\Desktop\Kroells_Bank\WpfApp1\WpfApp1\obj\Debug\MainWindow.baml
+C:\Users\zbc23jkst\Desktop\Kroells_Bank\WpfApp1\WpfApp1\obj\Debug\WpfApp1.g.resources
+C:\Users\zbc23jkst\Desktop\Kroells_Bank\WpfApp1\WpfApp1\obj\Debug\WpfApp1.Properties.Resources.resources
+C:\Users\zbc23jkst\Desktop\Kroells_Bank\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.GenerateResource.cache
+C:\Users\zbc23jkst\Desktop\Kroells_Bank\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.CoreCompileInputs.cache
+C:\Users\zbc23jkst\Desktop\Kroells_Bank\WpfApp1\WpfApp1\obj\Debug\WpfApp1.exe
+C:\Users\zbc23jkst\Desktop\Kroells_Bank\WpfApp1\WpfApp1\obj\Debug\WpfApp1.pdb
