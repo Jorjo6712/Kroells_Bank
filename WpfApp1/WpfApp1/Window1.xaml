@@ -30,18 +30,21 @@
                 Grid.Column="1" 
                 Margin="0 10 0 0"
             />
+            
             <Label 
                 Grid.Column="1" 
                 HorizontalAlignment="Center" 
                 Margin="15">
                 Name of cardholder
             </Label>
+            
             <Label 
                 Grid.Column="1" 
                 HorizontalAlignment="Left" 
                 Margin="60 40 30 30">
                 Balance:
             </Label>
+            
             <Label 
                 Grid.Column="1" 
                 HorizontalAlignment="Center" 
@@ -52,6 +55,7 @@
             </Label>
 
             <Button
+                x:Name="DepositBox"
                 Grid.Column="1" 
                 Grid.Row="1"
                 HorizontalAlignment="Center" 
@@ -64,6 +68,7 @@
             </Button>
 
             <Button
+                x:Name="WithdrawBox"
                 Grid.Column="1" 
                 Grid.Row="1"
                 HorizontalAlignment="Center" 
@@ -75,23 +80,21 @@
                 Withdraw (2)
             </Button>
 
-            <Button
+            <Label
                 Grid.Column="1" 
-                Grid.Row="1"
                 HorizontalAlignment="Center" 
-                Margin="200,20,0,20" 
-                Width="90" 
+                VerticalContentAlignment="Center" 
+                Margin="0,20,0,20" 
+                Width="200" 
                 Height="50"
                 FontSize="15"
-                Visibility="Hidden">
-                <TextBlock>
-                    Log out
-                    <LineBreak/>
-                    (Cancel)
-                </TextBlock>
-            </Button>
+
+                >
+                Press Cancel to log out
+            </Label>
 
             <Rectangle 
+                x:Name="TransactionBox"
                 Width="250" 
                 Height="40" 
                 Fill="White" 
@@ -101,12 +104,40 @@
             />
 
             <Label
+                x:Name="QuestionText"
                 Width="250" 
                 Height="40" 
                 Grid.Column="1" 
                 Grid.Row="1"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
+                Margin="0 -50 0 0"
+                HorizontalContentAlignment="Center"
+                >
+                How much do you wanna transact?
+            </Label>
+
+            <Label
+                x:Name="EnterText"
+                Width="250" 
+                Height="40" 
+                Grid.Column="1" 
+                Grid.Row="1"
+                Margin="0 70 0 0"
+                HorizontalContentAlignment="Center"
+                >
+                Press enter once done
+            </Label>
+
+            <Label
+                x:Name="TransactionText"
+                Width="250" 
+                Height="40" 
+                Grid.Column="1" 
+                Grid.Row="1"
+                Margin="0 30 0 30"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                FontWeight="Bold"
+                   FontSize="15"            
                 >
                 Transaction amount
             </Label>
@@ -137,6 +168,7 @@
                     FontSize="50">
                         1
                     </Button>
+
                     <Button 
                     x:Name="Button2"
                     Click="Button2"
@@ -145,6 +177,7 @@
                     FontSize="50">
                         2
                     </Button>
+                    
                     <Button 
                     x:Name="Button3"
                     Click="Button3"
@@ -156,6 +189,7 @@
                         </Button.Effect>
                         3
                     </Button>
+                    
                     <Button 
                     x:Name="Button4"
                     Click="Button4"
@@ -164,6 +198,7 @@
                     FontSize="50">
                         4
                     </Button>
+                    
                     <Button 
                     x:Name="Button5"
                     Click="Button5"
@@ -172,6 +207,7 @@
                     FontSize="50">
                         5
                     </Button>
+                    
                     <Button 
                     x:Name="Button6"
                     Click="Button6"
@@ -183,6 +219,7 @@
                         </Button.Effect>
                         6
                     </Button>
+
                     <Button 
                     x:Name="Button7"
                     Click="Button7"
@@ -191,6 +228,7 @@
                     FontSize="50">
                         7
                     </Button>
+                    
                     <Button 
                     x:Name="Button8"
                     Click="Button8"
@@ -199,6 +237,7 @@
                     FontSize="50">
                         8
                     </Button>
+                    
                     <Button 
                     x:Name="Button9"
                     Click="Button9"
@@ -231,6 +270,7 @@
                         </Button.Effect>
                         0
                     </Button>
+                    
                     <Button 
                     x:Name="Enter"
                     Click="EnterButton"
@@ -243,6 +283,7 @@
                         </Button.Effect>
                         Enter
                     </Button>
+
                     <Button 
                     x:Name="Clear"
                     Click="ClearButton"
@@ -255,6 +296,7 @@
                         </Button.Effect>
                         Clear
                     </Button>
+                    
                     <Button 
                     x:Name="Cancel"
                     Click="CancelButton"
@@ -267,6 +309,7 @@
                         </Button.Effect>
                         Cancel
                     </Button>
+                    
                 </Grid>
             </Grid>
         </Grid>
