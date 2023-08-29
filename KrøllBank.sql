@@ -361,10 +361,10 @@ WHERE Client_name IN
 
 CREATE PROCEDURE PinToWithdrawMoney
 @Pin SMALLINT,
-@DepositValue INT
+@WithdrawValue INT
 AS
 UPDATE Clients
-SET Balance = Balance - @DepositValue 
+SET Balance = Balance - @WithdrawValue 
 WHERE Client_name IN
 (
   SELECT Clients.Client_name
