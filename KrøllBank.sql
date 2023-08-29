@@ -346,7 +346,7 @@ END
 	
 CREATE PROCEDURE PinToDepositMoney
 @Pin SMALLINT,
-@DepositValue INT
+@DepositValue DECIMAL
 AS
 UPDATE Clients
 SET Balance = @DepositValue + Balance
@@ -361,7 +361,7 @@ WHERE Client_name IN
 
 CREATE PROCEDURE PinToWithdrawMoney
 @Pin SMALLINT,
-@WithdrawValue INT
+@WithdrawValue DECIMAL
 AS
 UPDATE Clients
 SET Balance = Balance - @WithdrawValue 
