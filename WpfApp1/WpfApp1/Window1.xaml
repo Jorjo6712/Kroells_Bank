@@ -46,6 +46,7 @@
             </Label>
             
             <Label 
+                x:Name="MoneyText"
                 Grid.Column="1" 
                 HorizontalAlignment="Center" 
                 Margin="0,55,0,0" 
@@ -63,7 +64,7 @@
                 Width="90" 
                 Height="50"
                 FontSize="15"
-                Visibility="Hidden">>
+                >
                 Deposit (1)
             </Button>
 
@@ -76,22 +77,26 @@
                 Width="90" 
                 Height="50"
                 FontSize="15"
-                Visibility="Hidden">>
+                >
                 Withdraw (2)
             </Button>
-
-            <Label
+            
+            <Button
+                x:Name="LogOutBox"
                 Grid.Column="1" 
+                Grid.Row="1"
                 HorizontalAlignment="Center" 
-                VerticalContentAlignment="Center" 
-                Margin="0,20,0,20" 
-                Width="200" 
+                Margin="200,20,0,20" 
+                Width="90" 
                 Height="50"
                 FontSize="15"
-
                 >
-                Press Cancel to log out
-            </Label>
+                <TextBlock>
+                    Log out
+                    <LineBreak />
+                    (Cancel)
+                </TextBlock>
+            </Button>
 
             <Rectangle 
                 x:Name="TransactionBox"
@@ -101,6 +106,7 @@
                 Grid.Column="1" 
                 Grid.Row="1"
                 Margin="0 0 0 0"
+                Visibility="Hidden"
             />
 
             <Label
@@ -111,6 +117,7 @@
                 Grid.Row="1"
                 Margin="0 -50 0 0"
                 HorizontalContentAlignment="Center"
+                Visibility="Hidden"
                 >
                 How much do you wanna transact?
             </Label>
@@ -123,6 +130,7 @@
                 Grid.Row="1"
                 Margin="0 70 0 0"
                 HorizontalContentAlignment="Center"
+                Visibility="Hidden"
                 >
                 Press enter once done
             </Label>
@@ -137,7 +145,8 @@
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
                 FontWeight="Bold"
-                   FontSize="15"            
+                FontSize="15"      
+                Visibility="Hidden"
                 >
                 Transaction amount
             </Label>
@@ -161,89 +170,72 @@
                     </Grid.RowDefinitions>
 
                     <Button 
-                    x:Name="Button1"
-                    Click="Button1"
+                    x:Name="Number1"
                     Grid.Column="0" 
                     Grid.Row="0"
-                    FontSize="50">
+                    FontSize="50" Click="Number1_Click">
                         1
                     </Button>
-
-                    <Button 
-                    x:Name="Button2"
-                    Click="Button2"
+                    <Button
+                    x:Name="Number2"
                     Grid.Column="1" 
                     Grid.Row="0"
-                    FontSize="50">
+                    FontSize="50" Click="Number2_Click">
                         2
                     </Button>
-                    
                     <Button 
                     x:Name="Button3"
-                    Click="Button3"
                     Grid.Column="2" 
                     Grid.Row="0"
-                    FontSize="50">
+                    FontSize="50" Click="Button3_Click">
                         <Button.Effect>
                             <DropShadowEffect/>
                         </Button.Effect>
                         3
                     </Button>
-                    
                     <Button 
                     x:Name="Button4"
-                    Click="Button4"
                     Grid.Column="0" 
                     Grid.Row="1"
-                    FontSize="50">
+                    FontSize="50" Click="Button4_Click">
                         4
                     </Button>
-                    
                     <Button 
                     x:Name="Button5"
-                    Click="Button5"
                     Grid.Column="1" 
                     Grid.Row="1"
-                    FontSize="50">
+                    FontSize="50" Click="Button5_Click">
                         5
                     </Button>
-                    
                     <Button 
                     x:Name="Button6"
-                    Click="Button6"
                     Grid.Column="2" 
                     Grid.Row="1"
-                    FontSize="50">
+                    FontSize="50" Click="Button6_Click">
                         <Button.Effect>
                             <DropShadowEffect/>
                         </Button.Effect>
                         6
                     </Button>
-
                     <Button 
                     x:Name="Button7"
-                    Click="Button7"
                     Grid.Column="0" 
                     Grid.Row="2"
-                    FontSize="50">
+                    FontSize="50" Click="Button7_Click">
                         7
                     </Button>
-                    
                     <Button 
                     x:Name="Button8"
-                    Click="Button8"
                     Grid.Column="1" 
                     Grid.Row="2"
-                    FontSize="50">
+                    FontSize="50" Click="Button8_Click">
                         8
                     </Button>
-                    
                     <Button 
                     x:Name="Button9"
-                    Click="Button9"
                     Grid.Column="2" 
                     Grid.Row="2"
-                    FontSize="50">
+                    FontSize="50" Click="Button9_Click">
                         <Button.Effect>
                             <DropShadowEffect/>
                         </Button.Effect>
@@ -262,54 +254,47 @@
                     </Grid.ColumnDefinitions>
                     <Button 
                     x:Name="Button0"
-                    Click="Button0"
                     Grid.Column="0"
-                    FontSize="50">
+                    FontSize="50" Click="Button0_Click">
                         <Button.Effect>
                             <DropShadowEffect/>
                         </Button.Effect>
                         0
                     </Button>
-                    
                     <Button 
-                    x:Name="Enter"
-                    Click="EnterButton"
+                    x:Name="EnterButton"
                     Grid.Column="1"
                     Background="#48A14D"
                     FontSize="18"
-                    FontWeight="Bold">
+                    FontWeight="Bold" Click="EnterButton_Click">
                         <Button.Effect>
                             <DropShadowEffect/>
                         </Button.Effect>
                         Enter
                     </Button>
-
-                    <Button 
-                    x:Name="Clear"
-                    Click="ClearButton"
+                    <Button
+                    x:Name="ClearButton"
                     Grid.Column="2"
                     Background="Yellow"
                     FontSize="18"
-                    FontWeight="Bold">
+                    FontWeight="Bold" Click="ClearButton_Click">
                         <Button.Effect>
                             <DropShadowEffect/>
                         </Button.Effect>
                         Clear
                     </Button>
-                    
                     <Button 
-                    x:Name="Cancel"
-                    Click="CancelButton"
+                    x:Name="CancelButton"
                     Grid.Column="3"
                     Background="Red"
                     FontSize="18"
-                    FontWeight="Bold">
+                    FontWeight="Bold" Click="CancelButton_Click">
                         <Button.Effect>
                             <DropShadowEffect/>
                         </Button.Effect>
                         Cancel
                     </Button>
-                    
+
                 </Grid>
             </Grid>
         </Grid>

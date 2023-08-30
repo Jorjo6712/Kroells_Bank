@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,73 @@ namespace WpfApp1
         public void GetValues()
         {
             // Get balance and output the value
+        }
+
+        // Numbers to pin
+        private void Number1_Click(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+
+        private void Number2_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button3_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button4_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button5_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button6_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button7_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button8_Click(object sender, RoutedEventArgs e)
+        {
+  
+        }
+
+        private void Button9_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button0_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ClearButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void EnterButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
