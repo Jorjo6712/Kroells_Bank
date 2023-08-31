@@ -12,63 +12,60 @@ namespace SQL_PROJECT_PERSONAL
 {
     internal class Datalayer
     {
-        public void Connection(TextBox PinCode)
+    public bool Connection(TextBox PinCode)
+    {
+    
+        int enteredPin;
+    
+        string balance = "";  // Variable to store the balance
+    
+        string clientName = "";  // Variable to store the client name
+    
+        string connString = @"Data Source=localhost;Initial Catalog=Krølls_bank; Integrated Security=True"; // SQL connection string
+    
+    
+        if (int.TryParse(PinCode.Text, out enteredPin))
         {
-
-            int enteredPin;
-
-            string balance = "";  // Variable to store the balance
-
-            string clientName = "";  // Variable to store the client name
-
-            string connString = @"Data Source=localhost;Initial Catalog=Krølls_bank; Integrated Security=True"; // SQL connection string
-
-
-            if (int.TryParse(PinCode.Text, out enteredPin))
+            using (SqlConnection conn = new SqlConnection(connString)) // SQL Connection
             {
-                using (SqlConnection conn = new SqlConnection(connString)) // SQL Connection
+                try
                 {
-                    try
+                    conn.Open();
+    
+                    using (SqlCommand cmd = new SqlCommand("PinToClientInfo", conn)) // This is what my procedure needs from me
                     {
-                        conn.Open();
-
-                        using (SqlCommand cmd = new SqlCommand("PinToClientInfo", conn)) // This is what my procedure needs from me
+                        cmd.CommandType = System.Data.CommandType.StoredProcedure; // This tell the program that we are working with StoredProcedure
+    
+                        cmd.Parameters.AddWithValue("@Pin", enteredPin); // This will send Data from C# to SQL server
+    
+                        using (SqlDataReader reader = cmd.ExecuteReader()) // This reads the SQL DATA
                         {
-                            cmd.CommandType = System.Data.CommandType.StoredProcedure; // This tell the program that we are working with StoredProcedure
-
-                            cmd.Parameters.AddWithValue("@Pin", enteredPin); // This will send Data from C# to SQL server
-
-                            using (SqlDataReader reader = cmd.ExecuteReader()) // This reads the SQL DATA
+                            if (reader.Read())
                             {
-                                if (reader.Read())
-                                {
-                                    balance = reader[0].ToString();  // Assuming Balance is the first column in the result set
-
-                                    clientName = reader[1].ToString();  // Assuming Client_name is the second column in the result set
-
-                                    MainWindow mainWindow = new MainWindow();
-
-                                    mainWindow.OpenDashboard(balance, clientName, enteredPin);
-
-                                    
-                                     // creating an object of our mainwindow so that we can go back
-                                    /*mainWindow.IsVisible = false;*/
-                                        
-
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Invalid PIN. Please try again."); // If Pin code does not exist in our DataBase
-                                }
+                                balance = reader[0].ToString();  // Assuming Balance is the first column in the result set
+    
+                                clientName = reader[1].ToString();  // Assuming Client_name is the second column in the result set
+    
+                                MainWindow mainWindow = new MainWindow();
+    
+                                mainWindow.OpenDashboard(balance, clientName, enteredPin);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Invalid PIN. Please try again."); // If Pin code does not exist in our DataBase
+                                return false;
                             }
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error: " + ex.Message); // If connection is not working
-                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message); // If connection is not working
                 }
             }
+        }
+    
+        return true;
         }
 
         public void Deposit(TextBox transactionBox, int pin, long totalAmount)
