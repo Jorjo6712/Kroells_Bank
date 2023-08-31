@@ -193,9 +193,11 @@ namespace SQL_PROJECT_PERSONAL
             Datalayer data = new Datalayer();
         private void EnterButton_Click(object sender, RoutedEventArgs e)
         {
-            data.Connection(PinCode);
-            
-            this.Close();
+            if (data.Connection(PinCode))
+            {
+                this.Close();
+
+            }
         }
 
         public void OpenDashboard(string balance, string clientname, int pin)
