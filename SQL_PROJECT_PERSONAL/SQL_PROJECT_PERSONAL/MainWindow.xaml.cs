@@ -28,6 +28,7 @@ namespace SQL_PROJECT_PERSONAL
 
         // These variables will be used in this windows
         int i = 0;
+        Datalayer data = new Datalayer();
         string connString = @"Data Source=localhost;Initial Catalog=Krølls_bank;Integrated Security=True"; // SQL connection string
 
         public MainWindow()
@@ -188,9 +189,7 @@ namespace SQL_PROJECT_PERSONAL
         {
             Application.Current.Shutdown();
         }
-
         
-            Datalayer data = new Datalayer();
         private void EnterButton_Click(object sender, RoutedEventArgs e)
         {
             if (data.Connection(PinCode))
