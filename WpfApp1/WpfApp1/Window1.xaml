@@ -107,6 +107,7 @@
 
                     <Button 
                     x:Name="Button1"
+                    Click="Button1"
                     Grid.Column="0" 
                     Grid.Row="0"
                     FontSize="50">
@@ -114,6 +115,7 @@
                     </Button>
                     <Button 
                     x:Name="Button2"
+                    Click="Button2"
                     Grid.Column="1" 
                     Grid.Row="0"
                     FontSize="50">
@@ -121,6 +123,7 @@
                     </Button>
                     <Button 
                     x:Name="Button3"
+                    Click="Button3"
                     Grid.Column="2" 
                     Grid.Row="0"
                     FontSize="50">
@@ -131,6 +134,7 @@
                     </Button>
                     <Button 
                     x:Name="Button4"
+                    Click="Button4"
                     Grid.Column="0" 
                     Grid.Row="1"
                     FontSize="50">
@@ -138,6 +142,7 @@
                     </Button>
                     <Button 
                     x:Name="Button5"
+                    Click="Button5"
                     Grid.Column="1" 
                     Grid.Row="1"
                     FontSize="50">
@@ -145,6 +150,7 @@
                     </Button>
                     <Button 
                     x:Name="Button6"
+                    Click="Button6"
                     Grid.Column="2" 
                     Grid.Row="1"
                     FontSize="50">
@@ -155,6 +161,7 @@
                     </Button>
                     <Button 
                     x:Name="Button7"
+                    Click="Button7"
                     Grid.Column="0" 
                     Grid.Row="2"
                     FontSize="50">
@@ -162,6 +169,7 @@
                     </Button>
                     <Button 
                     x:Name="Button8"
+                    Click="Button8"
                     Grid.Column="1" 
                     Grid.Row="2"
                     FontSize="50">
@@ -169,6 +177,7 @@
                     </Button>
                     <Button 
                     x:Name="Button9"
+                    Click="Button9"
                     Grid.Column="2" 
                     Grid.Row="2"
                     FontSize="50">
@@ -190,6 +199,7 @@
                     </Grid.ColumnDefinitions>
                     <Button 
                     x:Name="Button0"
+                    Click="Button0"
                     Grid.Column="0"
                     FontSize="50">
                         <Button.Effect>
@@ -199,6 +209,7 @@
                     </Button>
                     <Button 
                     x:Name="Enter"
+                    Click="EnterButton"
                     Grid.Column="1"
                     Background="#48A14D"
                     FontSize="18"
@@ -210,6 +221,7 @@
                     </Button>
                     <Button 
                     x:Name="Clear"
+                    Click="ClearButton"
                     Grid.Column="2"
                     Background="Yellow"
                     FontSize="18"
@@ -221,6 +233,7 @@
                     </Button>
                     <Button 
                     x:Name="Cancel"
+                    Click="CancelButton"
                     Grid.Column="3"
                     Background="Red"
                     FontSize="18"
