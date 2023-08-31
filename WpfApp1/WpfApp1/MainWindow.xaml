@@ -5,9 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        WindowStartupLocation="CenterScreen"
-        WindowStyle="None" AllowsTransparency="True" Background="Transparent"
-        Title="MainWindow" Height="512" Width="320">
+        Title="Pin input" Height="512" Width="320">
     <Grid Background="Beige">
 
         <Grid.ColumnDefinitions>
@@ -37,9 +35,7 @@
             Krøll's Bank
         </TextBlock>
 
-        <TextBox
-            IsReadOnly="True"
-            x:Name="PinCode"
+        <TextBlock
             Grid.Row="1"
             Grid.Column="1"
             FontSize="55"
@@ -47,11 +43,11 @@
             TextAlignment="Center"
             Background="Azure"
             Opacity="0.9">
-            <TextBox.Effect>
+            <TextBlock.Effect>
                 <DropShadowEffect/>
-            </TextBox.Effect>
+            </TextBlock.Effect>
             PIN
-        </TextBox>
+        </TextBlock>
 
         <Grid Grid.Column="1" Grid.Row="2">
             <Grid.RowDefinitions>
@@ -72,24 +68,27 @@
                 </Grid.RowDefinitions>
 
                 <Button 
-                    x:Name="Number1"
+                    x:Name="Button1"
+                    Click="Button1"
                     Grid.Column="0" 
                     Grid.Row="0"
-                    FontSize="50" Click="Number1_Click">
+                    FontSize="50">
                     1
                 </Button>
-                <Button
-                    x:Name="Number2"
+                <Button 
+                    x:Name="Button2"
+                    Click="Button2"
                     Grid.Column="1" 
                     Grid.Row="0"
-                    FontSize="50" Click="Number2_Click">
+                    FontSize="50">
                     2
                 </Button>
                 <Button 
                     x:Name="Button3"
+                    Click="Button3"
                     Grid.Column="2" 
                     Grid.Row="0"
-                    FontSize="50" Click="Button3_Click">
+                    FontSize="50">
                     <Button.Effect>
                         <DropShadowEffect/>
                     </Button.Effect>
@@ -97,23 +96,26 @@
                 </Button>
                 <Button 
                     x:Name="Button4"
+                    Click="Button4"
                     Grid.Column="0" 
                     Grid.Row="1"
-                    FontSize="50" Click="Button4_Click">
+                    FontSize="50">
                     4
                 </Button>
                 <Button 
                     x:Name="Button5"
+                    Click="Button5"
                     Grid.Column="1" 
                     Grid.Row="1"
-                    FontSize="50" Click="Button5_Click">
+                    FontSize="50">
                     5
                 </Button>
                 <Button 
                     x:Name="Button6"
+                    Click="Button6"
                     Grid.Column="2" 
                     Grid.Row="1"
-                    FontSize="50" Click="Button6_Click">
+                    FontSize="50">
                     <Button.Effect>
                         <DropShadowEffect/>
                     </Button.Effect>
@@ -121,23 +123,26 @@
                 </Button>
                 <Button 
                     x:Name="Button7"
+                    Click="Button7"
                     Grid.Column="0" 
                     Grid.Row="2"
-                    FontSize="50" Click="Button7_Click">
+                    FontSize="50">
                     7
                 </Button>
                 <Button 
                     x:Name="Button8"
+                    Click="Button8"
                     Grid.Column="1" 
                     Grid.Row="2"
-                    FontSize="50" Click="Button8_Click">
+                    FontSize="50">
                     8
                 </Button>
                 <Button 
                     x:Name="Button9"
+                    Click="Button9"
                     Grid.Column="2" 
                     Grid.Row="2"
-                    FontSize="50" Click="Button9_Click">
+                    FontSize="50">
                     <Button.Effect>
                         <DropShadowEffect/>
                     </Button.Effect>
@@ -156,41 +161,45 @@
                 </Grid.ColumnDefinitions>
                 <Button 
                     x:Name="Button0"
+                    Click="Button0"
                     Grid.Column="0"
-                    FontSize="50" Click="Button0_Click">
+                    FontSize="50">
                     <Button.Effect>
                         <DropShadowEffect/>
                     </Button.Effect>
                     0
                 </Button>
                 <Button 
-                    x:Name="EnterButton"
+                    x:Name="Enter"
+                    Click="EnterButton"
                     Grid.Column="1"
                     Background="#48A14D"
                     FontSize="18"
-                    FontWeight="Bold" Click="EnterButton_Click">
+                    FontWeight="Bold">
                     <Button.Effect>
                         <DropShadowEffect/>
                     </Button.Effect>
                     Enter
                 </Button>
-                <Button
-                    x:Name="ClearButton"
+                <Button 
+                    x:Name="Clear"
+                    Click="ClearButton"
                     Grid.Column="2"
                     Background="Yellow"
                     FontSize="18"
-                    FontWeight="Bold" Click="ClearButton_Click">
+                    FontWeight="Bold">
                     <Button.Effect>
                         <DropShadowEffect/>
                     </Button.Effect>
                     Clear
                 </Button>
                 <Button 
-                    x:Name="CancelButton"
+                    x:Name="Cancel"
+                    Click="CancelButton"
                     Grid.Column="3"
                     Background="Red"
                     FontSize="18"
-                    FontWeight="Bold" Click="CancelButton_Click">
+                    FontWeight="Bold">
                     <Button.Effect>
                         <DropShadowEffect/>
                     </Button.Effect>
