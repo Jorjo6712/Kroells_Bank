@@ -363,13 +363,24 @@ CREATE PROCEDURE PinToWithdrawMoney
 @Pin SMALLINT,
 @WithdrawValue DECIMAL
 AS
-UPDATE Clients
-SET Balance = Balance - @WithdrawValue 
-WHERE Client_name IN
-(
-  SELECT Clients.Client_name
+BEGIN
+  -- Check if the user has enough balance
+  DECLARE @CurrentBalance DECIMAL;
+  SELECT @CurrentBalance = Balance
   FROM Clients
-  INNER JOIN Cards
-  ON Clients.Client_name = Cards.Client_name
-  WHERE Pin = @Pin
-);
+  WHERE Client_name = (SELECT Client_name FROM Cards WHERE Pin = @Pin);
+
+  IF @CurrentBalance IS NOT NULL AND @CurrentBalance >= @WithdrawValue
+  BEGIN
+    -- Perform the withdrawal
+    UPDATE Clients
+    SET Balance = Balance - @WithdrawValue 
+    WHERE Client_name = (SELECT Client_name FROM Cards WHERE Pin = @Pin);
+  END
+  ELSE
+  BEGIN
+    -- Insufficient funds, you could set a return code or output variable here
+    -- For example:
+    RETURN -1;
+  END
+END;
