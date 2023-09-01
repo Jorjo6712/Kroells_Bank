@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -11,6 +11,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -27,148 +28,33 @@ namespace SQL_PROJECT_PERSONAL
     {
 
         // These variables will be used in this windows
-        int i = 0;
-        Datalayer data = new Datalayer();
+        bool remove = true;
         string connString = @"Data Source=localhost;Initial Catalog=Krølls_bank;Integrated Security=True"; // SQL connection string
 
         public MainWindow()
         {
             InitializeComponent();
-            
+
         }
 
-        // all these button are used as Numpad
-        private void Number1_Click(object sender, RoutedEventArgs e)
+        // All these button are used as Numpad are here in this single method
+        private void NumberButton_Click(object sender, RoutedEventArgs e)
         {
             if (PinCode.Text.Length < 4)
             {
-                if (i == 0)
+                if (remove)
                 {
                     PinCode.Text = "";
-                    i++;
+                    remove = false;
                 }
-                PinCode.Text = PinCode.Text + 1;
-            }
 
-        }
+                // Retrieve the number from the Button's Tag property
+                Button button = (Button)sender;
+                string number = button.Tag.ToString();
 
-        private void Number2_Click(object sender, RoutedEventArgs e)
-        {
-            if (PinCode.Text.Length < 4)
-            {
-                if (i == 0)
-                {
-                    PinCode.Text = "";
-                    i++;
-                }
-                PinCode.Text = PinCode.Text + 2;
+                PinCode.Text = PinCode.Text + number;
             }
         }
-
-        private void Button3_Click(object sender, RoutedEventArgs e)
-        {
-            if (PinCode.Text.Length < 4)
-            {
-                if (i == 0)
-                {
-                    PinCode.Text = "";
-                    i++;
-                }
-                PinCode.Text = PinCode.Text + 3;
-            }
-        }
-
-        private void Button4_Click(object sender, RoutedEventArgs e)
-        {
-            if (PinCode.Text.Length < 4)
-            {
-                if (i == 0)
-                {
-                    PinCode.Text = "";
-                    i++;
-                }
-                PinCode.Text = PinCode.Text + 4;
-            }
-        }
-
-        private void Button5_Click(object sender, RoutedEventArgs e)
-        {
-            if (PinCode.Text.Length < 4)
-            {
-                if (i == 0)
-                {
-                    PinCode.Text = "";
-                    i++;
-                }
-                PinCode.Text = PinCode.Text + 5;
-            }
-        }
-
-        private void Button6_Click(object sender, RoutedEventArgs e)
-        {
-            if (PinCode.Text.Length < 4)
-            {
-                if (i == 0)
-                {
-                    PinCode.Text = "";
-                    i++;
-                }
-                PinCode.Text = PinCode.Text + 6;
-            }
-        }
-
-        private void Button7_Click(object sender, RoutedEventArgs e)
-        {
-            if (PinCode.Text.Length < 4)
-            {
-                if (i == 0)
-                {
-                    PinCode.Text = "";
-                    i++;
-                }
-                PinCode.Text = PinCode.Text + 7;
-            }
-        }
-
-        private void Button8_Click(object sender, RoutedEventArgs e)
-        {
-            if (PinCode.Text.Length < 4)
-            {
-                if (i == 0)
-                {
-                    PinCode.Text = "";
-                    i++;
-                }
-                PinCode.Text = PinCode.Text + 8;
-            }
-        }
-
-        private void Button9_Click(object sender, RoutedEventArgs e)
-        {
-            if (PinCode.Text.Length < 4)
-            {
-                if (i == 0)
-                {
-                    PinCode.Text = "";
-                    i++;
-                }
-                PinCode.Text = PinCode.Text + 9;
-            }
-        }
-
-        private void Button0_Click(object sender, RoutedEventArgs e)
-        {
-            if (PinCode.Text.Length < 4)
-            {
-                if (i == 0)
-                {
-                    PinCode.Text = "";
-                    i++;
-                }
-                PinCode.Text = PinCode.Text + 0;
-            }
-        }
-
 
         /// <summary>
         /// This Button is to clear what user have already wrote using Numpad
@@ -189,14 +75,23 @@ namespace SQL_PROJECT_PERSONAL
         {
             Application.Current.Shutdown();
         }
-        
+
+
+        Datalayer data = new Datalayer();
         private void EnterButton_Click(object sender, RoutedEventArgs e)
         {
-            if (data.Connection(PinCode))
+            if (PinCode.Text.Length == 4)
             {
-                this.Close();
-
+                if (data.Connection(PinCode))
+                {
+                    this.Close();
+                }
             }
+            else
+            {
+                MessageBox.Show("Your Pin must be 4 digits!");
+            }
+
         }
 
         public void OpenDashboard(string balance, string clientname, int pin)
