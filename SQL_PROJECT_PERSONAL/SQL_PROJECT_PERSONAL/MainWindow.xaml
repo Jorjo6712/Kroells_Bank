@@ -10,13 +10,14 @@
         Title="PinInput" Height="512" Width="320">
     <Grid Background="Beige">
 
-        
+        <!-- This code will give our program a boundary as you can see 10 px on right and left -->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
             <ColumnDefinition/>
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
 
+        <!-- This code will divide the whole program into 3 parts and each part us used for seperate thing -->
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition Height="100"/>
@@ -24,6 +25,7 @@
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
+        <!-- Textbox that shows our Bank name -->
         <TextBlock 
         Grid.Column="1"
         FontSize="53"
@@ -38,6 +40,7 @@
         Krøll's Bank
         </TextBlock>
 
+        <!-- Textbox to show user pin -->
         <TextBox
         IsReadOnly="True"
         x:Name="PinCode"
@@ -54,12 +57,14 @@
             PIN
         </TextBox>
 
+        <!-- This will divide the 3 row into 2 more rows -->
         <Grid Grid.Column="1" Grid.Row="2">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition Height="75"/>
             </Grid.RowDefinitions>
 
+            <!-- this will make equal column for each button except the 0 button -->
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -72,6 +77,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
+                <!-- button 1 -->
                 <Button 
                     x:Name="Number1"
                     Grid.Column="0" 
@@ -80,6 +86,7 @@
                     FontSize="50" Click="NumberButton_Click">
                     1
                 </Button>
+                <!-- button 2 -->
                 <Button
                     x:Name="Number2"
                     Grid.Column="1" 
@@ -88,6 +95,7 @@
                     FontSize="50" Click="NumberButton_Click">
                     2
                 </Button>
+                <!-- button 3 -->
                 <Button 
                     x:Name="Button3"
                     Grid.Column="2" 
@@ -99,6 +107,7 @@
                         </Button.Effect>
                     3
                 </Button>
+                <!-- button 4 -->
                 <Button 
                     x:Name="Button4"
                     Grid.Column="0" 
@@ -107,6 +116,7 @@
                     FontSize="50" Click="NumberButton_Click">
                     4
                 </Button>
+                <!-- button 5 -->
                 <Button 
                     x:Name="Button5"
                     Grid.Column="1" 
@@ -115,6 +125,7 @@
                     FontSize="50" Click="NumberButton_Click">
                     5
                 </Button>
+                <!-- button 6 -->
                 <Button 
                     x:Name="Button6"
                     Grid.Column="2" 
@@ -126,6 +137,7 @@
                         </Button.Effect>
                     6
                 </Button>
+                <!-- button 7 -->
                 <Button 
                     x:Name="Button7"
                     Grid.Column="0" 
@@ -134,6 +146,7 @@
                     FontSize="50" Click="NumberButton_Click">
                     7
                 </Button>
+                <!-- button 8 -->
                 <Button 
                     x:Name="Button8"
                     Grid.Column="1" 
@@ -142,6 +155,7 @@
                     FontSize="50" Click="NumberButton_Click">
                     8
                 </Button>
+                <!-- button 9 -->
                 <Button 
                     x:Name="Button9"
                     Grid.Column="2" 
@@ -156,7 +170,7 @@
 
             </Grid>
 
-            <!-- This code is for the last for buttons -->
+            <!-- This will create the last 4 columns for our program -->
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100"/>
@@ -164,6 +178,7 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
+                <!-- button 0 -->
                 <Button 
                     x:Name="Button0"
                     Grid.Column="0"
@@ -174,6 +189,7 @@
                         </Button.Effect>
                     0
                 </Button>
+                <!-- Enter button -->
                 <Button 
                 x:Name="EnterButton"
                 Grid.Column="1"
@@ -185,6 +201,7 @@
                     </Button.Effect>
                     Enter
                 </Button>
+                <!-- Clear button -->
                 <Button
                 x:Name="ClearButton"
                 Grid.Column="2"
@@ -196,6 +213,7 @@
                     </Button.Effect>
                     Clear
                 </Button>
+                <!-- Cancel button -->
                 <Button 
                 x:Name="CancelButton"
                 Grid.Column="3"
