@@ -159,6 +159,31 @@ namespace WpfApp1
             }
         }
 
+<<<<<<< Updated upstream:WpfApp1/WpfApp1/MainWindow.xaml.cs
+=======
+        void NumpadNumber()
+        {
+            // Checks if the pincode length is less than 4
+            if (PinCode.Text.Length < 4)
+            {
+                // 
+                if (i == 0)
+                {
+                    PinCode.Text = "";
+                    i++;
+                }
+
+                PinCode.Text = PinCode.Text + 3;
+            }
+        }
+
+
+        /// <summary>
+        /// This Button is to clear what user have already wrote using Numpad
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+>>>>>>> Stashed changes:SQL_PROJECT_PERSONAL/SQL_PROJECT_PERSONAL/MainWindow.xaml.cs
         private void ClearButton_Click(object sender, RoutedEventArgs e)
         {
             PinCode.Text = "";
