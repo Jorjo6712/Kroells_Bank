@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -15,6 +17,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace SQL_PROJECT_PERSONAL
 {
@@ -29,18 +32,18 @@ namespace SQL_PROJECT_PERSONAL
 
         // These variables will be used in this windows
         bool remove = true;
-        string connString = @"Data Source=localhost;Initial Catalog=Krølls_bank;Integrated Security=True"; // SQL connection string
+        const int pinLength = 4;
+
 
         public MainWindow()
         {
             InitializeComponent();
-
         }
 
         // All these button are used as Numpad are here in this single method
         private void NumberButton_Click(object sender, RoutedEventArgs e)
         {
-            if (PinCode.Text.Length < 4)
+            if (PinCode.Text.Length < pinLength)
             {
                 if (remove)
                 {
@@ -80,7 +83,7 @@ namespace SQL_PROJECT_PERSONAL
         Datalayer data = new Datalayer();
         private void EnterButton_Click(object sender, RoutedEventArgs e)
         {
-            if (PinCode.Text.Length == 4)
+            if (PinCode.Text.Length == pinLength)
             {
                 if (data.Connection(PinCode))
                 {

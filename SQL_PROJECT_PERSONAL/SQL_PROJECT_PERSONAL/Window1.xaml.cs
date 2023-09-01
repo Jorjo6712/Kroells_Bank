@@ -44,16 +44,11 @@ namespace SQL_PROJECT_PERSONAL
             
             InitializeComponent();
 
+            // Sets values to global variables, which are provided from the previous window
             clientName = GetClient_Name;
-
-            //MessageBox.Show(getBalance + " window 2 " +  GetClient_Name);
-
             MoneyText.Content = getBalance;
-
             Card_Holder_Name.Content = GetClient_Name;
-
             pin = Getpin;
-
             DBBalance = Convert.ToInt32(getBalance);
 
         }
@@ -138,7 +133,6 @@ namespace SQL_PROJECT_PERSONAL
         private void ClearButton_Click(object sender, RoutedEventArgs e)
         {
             TransactionText.Visibility = Visibility.Hidden;
-
             TransactionBox.Text = "";
         }
 
@@ -183,7 +177,7 @@ namespace SQL_PROJECT_PERSONAL
                 else // This will connect to the SQL StoredProcedure
                 {
                     Datalayer data = new Datalayer();
-                    data.Deposit(TransactionBox, pin, totalAmount);
+                    data.Deposit(pin, totalAmount);
                     BackToMainWindow();
                 }
             }
@@ -196,6 +190,9 @@ namespace SQL_PROJECT_PERSONAL
 
         }
 
+        /// <summary>
+        /// This method returns back to the pincode input window
+        /// </summary>
         public void BackToMainWindow()
         {
             MainWindow mainWindow = new MainWindow();

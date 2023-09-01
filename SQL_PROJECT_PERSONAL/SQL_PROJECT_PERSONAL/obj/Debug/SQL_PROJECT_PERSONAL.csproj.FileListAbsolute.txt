@@ -15,3 +15,21 @@ C:\Users\Shaz0184\Desktop\Testing C#\SQL PROJECT PERSONAL\SQL_PROJECT_PERSONAL\S
 C:\Users\Shaz0184\Desktop\Testing C#\SQL PROJECT PERSONAL\SQL_PROJECT_PERSONAL\SQL_PROJECT_PERSONAL\obj\Debug\SQL_PROJECT_PERSONAL.csproj.CoreCompileInputs.cache
 C:\Users\Shaz0184\Desktop\Testing C#\SQL PROJECT PERSONAL\SQL_PROJECT_PERSONAL\SQL_PROJECT_PERSONAL\obj\Debug\SQL_PROJECT_PERSONAL.exe
 C:\Users\Shaz0184\Desktop\Testing C#\SQL PROJECT PERSONAL\SQL_PROJECT_PERSONAL\SQL_PROJECT_PERSONAL\obj\Debug\SQL_PROJECT_PERSONAL.pdb
+C:\Users\zbcmhlun\Documents\GitHub\Kroells_Bank\SQL_PROJECT_PERSONAL\SQL_PROJECT_PERSONAL\obj\Debug\SQL_PROJECT_PERSONAL.csproj.AssemblyReference.cache
+C:\Users\zbcmhlun\Documents\GitHub\Kroells_Bank\SQL_PROJECT_PERSONAL\SQL_PROJECT_PERSONAL\obj\Debug\SQL_PROJECT_PERSONAL.csproj.SuggestedBindingRedirects.cache
+C:\Users\zbcmhlun\Documents\GitHub\Kroells_Bank\SQL_PROJECT_PERSONAL\SQL_PROJECT_PERSONAL\obj\Debug\MainWindow.g.cs
+C:\Users\zbcmhlun\Documents\GitHub\Kroells_Bank\SQL_PROJECT_PERSONAL\SQL_PROJECT_PERSONAL\obj\Debug\Window1.g.cs
+C:\Users\zbcmhlun\Documents\GitHub\Kroells_Bank\SQL_PROJECT_PERSONAL\SQL_PROJECT_PERSONAL\obj\Debug\App.g.cs
+C:\Users\zbcmhlun\Documents\GitHub\Kroells_Bank\SQL_PROJECT_PERSONAL\SQL_PROJECT_PERSONAL\obj\Debug\SQL_PROJECT_PERSONAL_MarkupCompile.cache
+C:\Users\zbcmhlun\Documents\GitHub\Kroells_Bank\SQL_PROJECT_PERSONAL\SQL_PROJECT_PERSONAL\obj\Debug\SQL_PROJECT_PERSONAL_MarkupCompile.lref
+C:\Users\zbcmhlun\Documents\GitHub\Kroells_Bank\SQL_PROJECT_PERSONAL\SQL_PROJECT_PERSONAL\obj\Debug\SQL_PROJECT_PERSONAL.exe
+C:\Users\zbcmhlun\Documents\GitHub\Kroells_Bank\SQL_PROJECT_PERSONAL\SQL_PROJECT_PERSONAL\obj\Debug\SQL_PROJECT_PERSONAL.pdb
+C:\Users\zbcmhlun\Documents\GitHub\Kroells_Bank\SQL_PROJECT_PERSONAL\SQL_PROJECT_PERSONAL\bin\Debug\SQL_PROJECT_PERSONAL.exe.config
+C:\Users\zbcmhlun\Documents\GitHub\Kroells_Bank\SQL_PROJECT_PERSONAL\SQL_PROJECT_PERSONAL\bin\Debug\SQL_PROJECT_PERSONAL.exe
+C:\Users\zbcmhlun\Documents\GitHub\Kroells_Bank\SQL_PROJECT_PERSONAL\SQL_PROJECT_PERSONAL\bin\Debug\SQL_PROJECT_PERSONAL.pdb
+C:\Users\zbcmhlun\Documents\GitHub\Kroells_Bank\SQL_PROJECT_PERSONAL\SQL_PROJECT_PERSONAL\obj\Debug\MainWindow.baml
+C:\Users\zbcmhlun\Documents\GitHub\Kroells_Bank\SQL_PROJECT_PERSONAL\SQL_PROJECT_PERSONAL\obj\Debug\Window1.baml
+C:\Users\zbcmhlun\Documents\GitHub\Kroells_Bank\SQL_PROJECT_PERSONAL\SQL_PROJECT_PERSONAL\obj\Debug\SQL_PROJECT_PERSONAL.g.resources
+C:\Users\zbcmhlun\Documents\GitHub\Kroells_Bank\SQL_PROJECT_PERSONAL\SQL_PROJECT_PERSONAL\obj\Debug\SQL_PROJECT_PERSONAL.Properties.Resources.resources
+C:\Users\zbcmhlun\Documents\GitHub\Kroells_Bank\SQL_PROJECT_PERSONAL\SQL_PROJECT_PERSONAL\obj\Debug\SQL_PROJECT_PERSONAL.csproj.GenerateResource.cache
+C:\Users\zbcmhlun\Documents\GitHub\Kroells_Bank\SQL_PROJECT_PERSONAL\SQL_PROJECT_PERSONAL\obj\Debug\SQL_PROJECT_PERSONAL.csproj.CoreCompileInputs.cache

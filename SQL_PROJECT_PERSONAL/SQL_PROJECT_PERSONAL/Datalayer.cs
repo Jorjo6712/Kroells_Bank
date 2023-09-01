@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -12,68 +13,59 @@ namespace SQL_PROJECT_PERSONAL
 {
     internal class Datalayer
     {
-    public bool Connection(TextBox PinCode)
-    {
-    
-        int enteredPin;
-    
-        string balance = "";  // Variable to store the balance
-    
-        string clientName = "";  // Variable to store the client name
-    
-        string connString = @"Data Source=localhost;Initial Catalog=Krølls_bank; Integrated Security=True"; // SQL connection string
-    
-    
-        if (int.TryParse(PinCode.Text, out enteredPin))
+        public bool Connection(TextBox PinCode)
         {
-            using (SqlConnection conn = new SqlConnection(connString)) // SQL Connection
+            // Gets the connection string from the app configuration
+            string connString = ConfigurationManager.AppSettings.Get("Conn");
+
+            if (int.TryParse(PinCode.Text, out int enteredPin))
             {
-                try
+                using (SqlConnection conn = new SqlConnection(connString)) // SQL Connection
                 {
-                    conn.Open();
-    
-                    using (SqlCommand cmd = new SqlCommand("PinToClientInfo", conn)) // This is what my procedure needs from me
+                    try
                     {
-                        cmd.CommandType = System.Data.CommandType.StoredProcedure; // This tell the program that we are working with StoredProcedure
-    
-                        cmd.Parameters.AddWithValue("@Pin", enteredPin); // This will send Data from C# to SQL server
-    
-                        using (SqlDataReader reader = cmd.ExecuteReader()) // This reads the SQL DATA
+                        conn.Open();
+
+                        using (SqlCommand cmd = new SqlCommand("PinToClientInfo", conn)) // This is what my procedure needs from me
                         {
-                            if (reader.Read())
+                            cmd.CommandType = CommandType.StoredProcedure; // This tell the program that we are working with StoredProcedure
+
+                            cmd.Parameters.AddWithValue("@Pin", enteredPin); // This will send Data from C# to SQL server
+
+                            using (SqlDataReader reader = cmd.ExecuteReader()) // This reads the SQL DATA
                             {
-                                balance = reader[0].ToString();  // Assuming Balance is the first column in the result set
-    
-                                clientName = reader[1].ToString();  // Assuming Client_name is the second column in the result set
-    
-                                MainWindow mainWindow = new MainWindow();
-    
-                                mainWindow.OpenDashboard(balance, clientName, enteredPin);
-                            }
-                            else
-                            {
-                                MessageBox.Show("Invalid PIN. Please try again."); // If Pin code does not exist in our DataBase
-                                return false;
+                                if (reader.Read())
+                                {
+                                    string balance = reader[0].ToString();  // Assuming Balance is the first column in the result set
+
+                                    string clientName = reader[1].ToString();  // Assuming Client_name is the second column in the result set
+
+                                    MainWindow mainWindow = new MainWindow();
+
+                                    mainWindow.OpenDashboard(balance, clientName, enteredPin);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Invalid PIN. Please try again."); // If Pin code does not exist in our DataBase
+                                    return false;
+                                }
                             }
                         }
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message); // If connection is not working
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message); // If connection is not working
+                    }
                 }
             }
-        }
-    
-        return true;
+
+            return true;
         }
 
-        public void Deposit(TextBox transactionBox, int pin, long totalAmount)
+        public void Deposit(int pin, long totalAmount)
         {
-
-            int transaction = Convert.ToInt32(transactionBox.Text);
-
-            string connString = @"Data Source=localhost;Initial Catalog=Krølls_bank;Integrated Security=True"; // SQL connection string
+            // Gets the connection string from the app configuration
+            string connString = ConfigurationManager.AppSettings.Get("Conn");
 
             using (SqlConnection conn = new SqlConnection(connString)) // For SQL Connection
             {
@@ -90,12 +82,6 @@ namespace SQL_PROJECT_PERSONAL
                         cmd.ExecuteNonQuery(); //In Modifying Section,we have Insert, Delete ,Update,...queries.so for this we need to use ExecuteNonQuery command.why because we are not querying a database, we are modifying
 
                         MessageBox.Show("All done!"); // Just to tell useer that everything is done
-
-                        //MainWindow mainWindow = new MainWindow(); // creating an object of our mainwindow so that we can go back
-                        //Window1 window1 = new Window1(transaction.ToString(), "", 0);
-
-                        //mainWindow.Show();
-                        //window1.Close();
                     }
                 }
                 catch (Exception ex) // in case of error
@@ -108,7 +94,8 @@ namespace SQL_PROJECT_PERSONAL
 
         public void Withdraw(int pin, long totalAmount, string balance, string clientName)
         {
-            string connString = @"Data Source=localhost;Initial Catalog=Krølls_bank;Integrated Security=True"; // SQL connection string
+            // Gets the connection string from the app configuration
+            string connString = ConfigurationManager.AppSettings.Get("Conn");
 
             using (SqlConnection conn = new SqlConnection(connString)) // For SQL Connection
             {
@@ -121,7 +108,7 @@ namespace SQL_PROJECT_PERSONAL
                         cmd.CommandType = CommandType.StoredProcedure; // tell program that it is a procedure that we are working with
                         cmd.Parameters.AddWithValue("@pin", pin); // giving values
                         cmd.Parameters.AddWithValue("@WithdrawValue", totalAmount); // giving values
-                        
+
                         // Create a new SqlParameter object to hold the return value from the stored procedure
                         SqlParameter returnValue = new SqlParameter("@ReturnVal", SqlDbType.Int);
 
@@ -134,7 +121,7 @@ namespace SQL_PROJECT_PERSONAL
                         cmd.ExecuteNonQuery(); //In Modifying Section,we have Insert, Delete ,Update,...queries.so for this we need to use ExecuteNonQuery command.why because we are not querying a database, we are modifying
 
                         int result = (int)returnValue.Value; // adding the return value into an int variable
-                        
+
                         if (result == -1) // if your withdraw more then you have in your account
                         {
                             // Insufficient funds
@@ -144,7 +131,7 @@ namespace SQL_PROJECT_PERSONAL
                         {
                             MessageBox.Show("All done!"); // if everything is done
                         }
-                        
+
                         //MainWindow mainWindow = new MainWindow(); // creating an object of our mainwindow so that we can go back
                         //Window1 window1 = new Window1(balance, clientName, pin);
 
