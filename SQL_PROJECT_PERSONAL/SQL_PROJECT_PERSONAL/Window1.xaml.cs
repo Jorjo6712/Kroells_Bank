@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -25,15 +25,13 @@ namespace SQL_PROJECT_PERSONAL
     {
 
         // All the variables that i will use in this window
-        bool MainOption = true;
+        bool MainOption1 = true;
+        bool MainOption2 = true;
         bool deposit = false;
         long totalAmount;
         int pin;
         int DBBalance;
         string clientName;
-
-        
-
 
         /// <summary>
         /// I receive data from MainWindow Here and Insert them into the variables that i have on top of them
@@ -60,19 +58,14 @@ namespace SQL_PROJECT_PERSONAL
 
         }
 
-        /// <summary>
-        /// This Button have two operations
-        /// 1. At first this Button is used to make sure if user want to deposit money
-        /// 2. Then it will work as Numpad
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Number1_Click(object sender, RoutedEventArgs e)
+        private void NumberButton_Click(object sender, RoutedEventArgs e)
         {
-            if (MainOption)
-            {
-                MainOption = false;
+            // Retrieve the number from the Button's Tag property
+            Button button = (Button)sender;
+            string number = button.Tag.ToString();
 
+            if (MainOption1 && number == "1")
+            {
                 deposit = true;
 
                 // hidding all the unecessary things from the screen
@@ -93,32 +86,14 @@ namespace SQL_PROJECT_PERSONAL
 
                 TransactionText.Visibility = Visibility.Visible;
 
+                MainOption1 = false;
+
+                MainOption2 = false;
+
+                TransactionBox.Text = "";
             }
-            else
+            else if (MainOption2 && number == "2")
             {
-                TransactionText.Visibility = Visibility.Hidden;
-
-                if (TransactionBox.Text.Length < 10)
-                {
-                    TransactionBox.Text = TransactionBox.Text + 1;
-                }
-                totalAmount = Convert.ToInt32(TransactionBox.Text);
-            }
-        }
-
-        /// <summary>
-        /// This Button have two operations
-        /// 1. At first this Button is used to make sure if user want to withdraw money
-        /// 2. Then it will work as Numpad
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Number2_Click(object sender, RoutedEventArgs e)
-        {
-            if (MainOption)
-            {
-                MainOption = false;
-
                 // hidding all the unecessary things from the screen
 
                 DepositBox.Visibility = Visibility.Hidden;
@@ -136,6 +111,12 @@ namespace SQL_PROJECT_PERSONAL
                 EnterText.Visibility = Visibility.Visible;
 
                 TransactionText.Visibility = Visibility.Visible;
+
+                MainOption1 = false;
+ 
+                MainOption2 = false;
+
+                TransactionBox.Text = "";
             }
             else
             {
@@ -143,155 +124,7 @@ namespace SQL_PROJECT_PERSONAL
 
                 if (TransactionBox.Text.Length < 9)
                 {
-                    TransactionBox.Text = TransactionBox.Text + 2;
-                }
-                totalAmount = Convert.ToInt32(TransactionBox.Text);
-            }
-        }
-
-        // All of these are my Numpad Buttons
-        private void Button3_Click(object sender, RoutedEventArgs e)
-        {
-
-            if (MainOption)
-            {
-
-            }
-            else
-            {
-                TransactionText.Visibility = Visibility.Hidden;
-
-                if (TransactionBox.Text.Length < 9)
-                {
-                    TransactionBox.Text = TransactionBox.Text + 3;
-                }
-                totalAmount = Convert.ToInt32(TransactionBox.Text);
-
-            }
-
-        }
-
-        private void Button4_Click(object sender, RoutedEventArgs e)
-        {
-            if (MainOption)
-            {
-
-            }
-            else
-            {
-                TransactionText.Visibility = Visibility.Hidden;
-
-                if (TransactionBox.Text.Length < 9)
-                {
-                    TransactionBox.Text = TransactionBox.Text + 4;
-                }
-                totalAmount = Convert.ToInt32(TransactionBox.Text);
-            }
-        }
-
-        private void Button5_Click(object sender, RoutedEventArgs e)
-        {
-            if (MainOption)
-            {
-
-            }
-            else
-            {
-                TransactionText.Visibility = Visibility.Hidden;
-
-                if (TransactionBox.Text.Length < 9)
-                {
-                    TransactionBox.Text = TransactionBox.Text + 5;
-                }
-                totalAmount = Convert.ToInt32(TransactionBox.Text);
-            }
-        }
-
-        private void Button6_Click(object sender, RoutedEventArgs e)
-        {
-            if (MainOption)
-            {
-
-            }
-            else
-            { 
-                TransactionText.Visibility = Visibility.Hidden;
-
-                if (TransactionBox.Text.Length < 9)
-                {
-                    TransactionBox.Text = TransactionBox.Text + 6;
-                }
-                totalAmount = Convert.ToInt32(TransactionBox.Text);
-            }
-        }
-
-        private void Button7_Click(object sender, RoutedEventArgs e)
-        {
-            if (MainOption)
-            {
-
-            }
-            else
-            {
-                TransactionText.Visibility = Visibility.Hidden;
-
-                if (TransactionBox.Text.Length < 9)
-                {
-                    TransactionBox.Text = TransactionBox.Text + 7;
-                }
-                totalAmount = Convert.ToInt32(TransactionBox.Text);
-            }
-        }
-
-        private void Button8_Click(object sender, RoutedEventArgs e)
-        {
-            if (MainOption)
-            {
-
-            }
-            else
-            {
-                TransactionText.Visibility = Visibility.Hidden;
-
-                if (TransactionBox.Text.Length < 9)
-                {
-                    TransactionBox.Text = TransactionBox.Text + 8;
-                }
-                totalAmount = Convert.ToInt32(TransactionBox.Text);
-            }
-        }
-
-        private void Button9_Click(object sender, RoutedEventArgs e)
-        {
-            if (MainOption)
-            {
-
-            }
-            else
-            {
-                TransactionText.Visibility = Visibility.Hidden;
-
-                if (TransactionBox.Text.Length < 9)
-                {
-                    TransactionBox.Text = TransactionBox.Text + 9;
-                }
-                totalAmount = Convert.ToInt32(TransactionBox.Text);
-            }
-        }
-
-        private void Button0_Click(object sender, RoutedEventArgs e)
-        {
-            if (MainOption)
-            {
-
-            }
-            else
-            {
-                TransactionText.Visibility = Visibility.Hidden;
-
-                if (TransactionBox.Text.Length < 9)
-                {
-                    TransactionBox.Text = TransactionBox.Text + 0;
+                    TransactionBox.Text = TransactionBox.Text + number;
                 }
                 totalAmount = Convert.ToInt32(TransactionBox.Text);
             }
@@ -333,7 +166,7 @@ namespace SQL_PROJECT_PERSONAL
         /// <param name="e"></param>
         private void EnterButton_Click(object sender, RoutedEventArgs e)
         {
-            if (MainOption) // Checking if user have choosen the MainOption
+            if (MainOption1 || MainOption2) // Checking if user have choosen the MainOption
             {
                 MessageBox.Show("Please select an option ");
             }
